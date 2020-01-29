@@ -107,7 +107,7 @@ analytics:
 
 # Site Author
 author:
-  name             : "KwangHoo Park"
+  name             : "Kwanghoo Park"
   avatar           : "/assets/images/bio-pic.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "No worries, I don't know how to hack"
   location         : "Suwon, South Korea"
