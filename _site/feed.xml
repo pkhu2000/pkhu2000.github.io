@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-01-29T14:32:20+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">dev.’s Blog</title><subtitle>Web / Linux / Java / C</subtitle><author><name>KwangHoo Park</name></author><entry xml:lang="ko"><title type="html">vim editor 환경설정하기</title><link href="http://localhost:4000/blog/2020-01-27/01" rel="alternate" type="text/html" title="vim editor 환경설정하기" /><published>2020-01-27T00:00:00+09:00</published><updated>2020-01-27T00:00:00+09:00</updated><id>http://localhost:4000/blog/2020-01-27/01</id><content type="html" xml:base="http://localhost:4000/blog/2020-01-27/01">&lt;h1 id=&quot;vim-editor-vimrc-설정하기&quot;&gt;vim editor .vimrc 설정하기&lt;/h1&gt;
+&lt;h2 id=&quot;how-to-set-up-vimrc-file&quot;&gt;How to set up .vimrc file&lt;/h2&gt;
+
+&lt;p&gt; 작년 여름이였나.. 학교에서 &lt;strong&gt;UNIX&lt;/strong&gt; 관련 수업을 때 &lt;strong&gt;vim editor&lt;/strong&gt;를 처음 사용해봤다. 처음에는 단축키와 방향키 같은게 너무 불편했지만 종강이 다가올 때쯤 나는 vim 에디터의 키맵핑에 완전히 적응해버렸다. 지금 생각해보면 vim 키맵핑을 익혀둔건 생산성 측면에서 많은 도움이 된다고 생각한다. 요즘은 정말 훌륭한 텍스트 편집기들이 많기 때문*에 딱히 신선한 정보는 아닐 수 있지만, 현재 내가 큰 불만없이 사용하고있는 &lt;strong&gt;.vimrc&lt;/strong&gt;파일 내용을 공유하고자 한다.&lt;/p&gt;
+
+&lt;h3 id=&quot;vimrc&quot;&gt;.vimrc&lt;/h3&gt;
+&lt;p&gt; 다음 내용을 &lt;strong&gt;~/.vimrc&lt;/strong&gt; 파일에 붙여넣으면 설정 내용들이 동작한다.&lt;br /&gt;
+만약 .vimrc 파일이 존재하지 않는다면 &lt;strong&gt;~/ 경로에 .vimrc 파일을 생성&lt;/strong&gt;해주자.&lt;/p&gt;
+
+&lt;div class=&quot;language-viml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;&quot; 구문강조 사용&lt;/span&gt;
+syntax &lt;span class=&quot;k&quot;&gt;on&lt;/span&gt; 
+
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; nocompatible
+
+&lt;span class=&quot;c&quot;&gt;&quot; 검색어 하이라이팅 &lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; hlsearch 
+
+&lt;span class=&quot;c&quot;&gt;&quot; 줄번호 &lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;nu&lt;/span&gt; 
+
+&lt;span class=&quot;c&quot;&gt;&quot; 자동 들여쓰기&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; autoindent 
+
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; scrolloff&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt; 
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; wildmode&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;longest&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;list 
+
+&lt;span class=&quot;c&quot;&gt;&quot; tag select &lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;4&lt;/span&gt; 
+
+&lt;span class=&quot;c&quot;&gt;&quot; st select &lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;sts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;4&lt;/span&gt; 
+
+&lt;span class=&quot;c&quot;&gt;&quot; 스크롤바 너비&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;sw&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; 
+
+&lt;span class=&quot;c&quot;&gt;&quot; 다른 파일로 넘어갈 때 자동 저장&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; autowrite 
+
+&lt;span class=&quot;c&quot;&gt;&quot; 작업 중인 파일 외부에서 변경됬을 경우 자동으로 불러옴&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; autoread 
+
+&lt;span class=&quot;c&quot;&gt;&quot; C언어 style 자동 들여쓰기&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; cindent 
+
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;history&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;100&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;&quot; 상태바 표시 항상&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; laststatus&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt; 
+
+&lt;span class=&quot;c&quot;&gt;&quot; 들여쓰기 너비 설정&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; shiftwidth&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;4&lt;/span&gt; 
+
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; smarttab
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; smartindent
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; softtabstop&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;4&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; tabstop&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;4&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;&quot; 현재 커서 위치 표시&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; ruler 
+
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; statusline&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;\ %&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;%&lt;span class=&quot;k&quot;&gt;l&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;%&lt;span class=&quot;k&quot;&gt;v&lt;/span&gt;\ &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;%P&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;%&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;%&lt;span class=&quot;k&quot;&gt;a&lt;/span&gt;\ %&lt;span class=&quot;k&quot;&gt;h&lt;/span&gt;%&lt;span class=&quot;k&quot;&gt;m&lt;/span&gt;%&lt;span class=&quot;k&quot;&gt;r&lt;/span&gt;\ %F\
+
+&lt;span class=&quot;c&quot;&gt;&quot; 파일저장인코딩 &lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; fileencoding&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;utf&lt;span class=&quot;m&quot;&gt;-8&lt;/span&gt; 
+
+&lt;span class=&quot;c&quot;&gt;&quot; 줄의 끝, 시작, 들여쓰기에서 백스페이스시 이전줄로&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; backspace&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;eol&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;indent 
+
+&lt;span class=&quot;c&quot;&gt;&quot; 키워드 입력시 점진적 검색&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; incsearch 
+
+&lt;span class=&quot;c&quot;&gt;&quot; 검색시 대소문자 무시, set ic 도 가능&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; ignorecase 
+
+&lt;span class=&quot;c&quot;&gt;&quot; 터미널 인코딩&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; tenc&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;utf&lt;span class=&quot;m&quot;&gt;-8&lt;/span&gt;      
+
+&lt;span class=&quot;c&quot;&gt;&quot; 한글 파일은 euc-kr로, 유니코드는 유니코드로&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; fencs&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;ucs&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt;bom&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;utf&lt;span class=&quot;m&quot;&gt;-8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;euc&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt;kr&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;latin1 
+
+&lt;span class=&quot;c&quot;&gt;&quot;Key mappings Leader key 설정&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; mapleader&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;,&quot;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;&quot; 마우스 사용 여부&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&quot; on&lt;/span&gt;
+map &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;F7&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;ESC&lt;span class=&quot;p&quot;&gt;&amp;gt;:&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; mouse&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;CR&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&quot; off&lt;/span&gt;
+map &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;F8&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;ESC&lt;span class=&quot;p&quot;&gt;&amp;gt;:&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; mouse&lt;span class=&quot;p&quot;&gt;-=&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;CR&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;&quot; moving&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&quot; insert mode&lt;/span&gt;
+inoremap jk &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;esc&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;&quot; normal mode&lt;/span&gt;
+nnoremap &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;S&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;l&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt; $
+nnoremap &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;S&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;h&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt; ^
+nnoremap &lt;span class=&quot;k&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;S&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;l&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;d&lt;/span&gt;$
+nnoremap &lt;span class=&quot;k&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;S&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;h&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;d&lt;/span&gt;^
+nnoremap &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;Tab&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt;
+nnoremap &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;S&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt;Tab&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt;
+nnoremap &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;C&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;--&amp;lt;&lt;/span&gt;CR&lt;span class=&quot;p&quot;&gt;&amp;gt;==&lt;/span&gt;
+nnoremap &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;C&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;m&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;CR&lt;span class=&quot;p&quot;&gt;&amp;gt;==&lt;/span&gt;
+nnoremap &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;S&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;k&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;&quot;실수로 help 열지 않기 위한 맵핑&lt;/span&gt;
+nnoremap &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;leader&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;h&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;S&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;&quot; visual mode&lt;/span&gt;
+vnoremap &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;S&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;l&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt; $
+vnoremap &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;S&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;h&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt; ^
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Kwanghoo Park</name></author><summary type="html">vim editor .vimrc 설정하기 How to set up .vimrc file</summary></entry><entry xml:lang="ko"><title type="html">Github 블로그 생성하기 / Jekyll 활용</title><link href="http://localhost:4000/blog/2020-01-27/02" rel="alternate" type="text/html" title="Github 블로그 생성하기 / Jekyll 활용" /><published>2020-01-27T00:00:00+09:00</published><updated>2020-01-27T00:00:00+09:00</updated><id>http://localhost:4000/blog/2020-01-27/02</id><content type="html" xml:base="http://localhost:4000/blog/2020-01-27/02">&lt;h1 id=&quot;jekyll을-활용해서-github-정적-블로그-생성하기&quot;&gt;Jekyll을 활용해서 Github 정적 블로그 생성하기&lt;/h1&gt;
+&lt;p&gt;  이전 포스트에서는 &lt;strong&gt;우분투 18.04 LTS 환경&lt;/strong&gt;에 &lt;strong&gt;Jekyll&lt;/strong&gt;을 설치하는 내용을 다루었다. 이제 본격적으로 Jekyll을 활용하여 &lt;strong&gt;Github 블로그를 생성&lt;/strong&gt;해보자.&lt;/p&gt;
+&lt;h2 id=&quot;github-repository-생성하기&quot;&gt;Github Repository 생성하기&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.github.com/new&quot;&gt;Create a New Repository&lt;/a&gt;
+  먼저 우리가 만들 Github 블로그의 테마, 포스트 등을 업로드할 저장소를 생성하자. Repository name은 블로그 생성 후에 &lt;strong&gt;도메인&lt;/strong&gt;으로 사용되므로 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;userName.github.io&lt;/code&gt;&lt;/strong&gt;의 포맷으로 입력하자.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/2020-01-27/2020-01-27_create_a_new_repo.png&quot; alt=&quot;ex_screenshot&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;-git-clone-jekyll-theme&quot;&gt;$ git clone Jekyll-theme&lt;/h2&gt;
+&lt;p&gt;  이제 블로그의 테마를 다운받을 차례이다. 편의상 &lt;strong&gt;사용자 홈 디렉토리&lt;/strong&gt;에서 진행하도록 하겠다. 설명을 위해 특정 테마를 정해야하므로 많은 테마들 중 가장 인기있고 무난한 &lt;strong&gt;&lt;a href=&quot;http://https://github.com/mmistakes/minimal-mistakes&quot;&gt;Minimal Mistakes&lt;/a&gt;&lt;/strong&gt; 테마를 선택했다. &lt;del&gt;참고로 이 블로그도 Minimal Mistakes를 사용ㅎ..&lt;/del&gt; 혹시라도 이 테마가 마음에 들지 않는다면 &lt;strong&gt;&lt;a href=&quot;http://jekyllthemes.org&quot;&gt;Jekyll Theme&lt;/a&gt;&lt;/strong&gt; 에서 마음에 드는 테마를 골라서 다운받으면 된다.&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ~
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git clone https://github.com/mmistakes/minimal-mistakes.git
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;minimal-mistakes
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;bundle &lt;span class=&quot;nb&quot;&gt;exec &lt;/span&gt;jekyll serve
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;아래와 같은 내용이 출력되면 성공. jekyll serve 명령어 이후 &lt;strong&gt;쉘이 다시 등장하지 않는&lt;/strong&gt;다고 당황하지말자.. 로컬 서버가 &lt;strong&gt;정상&lt;/strong&gt;적으로 동작하고있다는 의미이다.&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Configuration file: /home/userName/minimal-mistakes/_config.yml
+            Source: /home/userName/minimal-mistakes
+       Destination: /home/userName/minimal-mistakes/_site
+ Incremental build: disabled. Enable with &lt;span class=&quot;nt&quot;&gt;--incremental&lt;/span&gt;
+      Generating... 
+       Jekyll Feed: Generating feed &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;posts
+                    &lt;span class=&quot;k&quot;&gt;done in &lt;/span&gt;0.199 seconds.
+ Auto-regeneration: enabled &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'/home/userName/minimal-mistakes'&lt;/span&gt;
+    Server address: http://127.0.0.1:4000
+  Server running... press ctrl-c to stop.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;  이제 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;http://127.0.0.1:4000/&lt;/code&gt;&lt;/strong&gt; 또는 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;http://localhost:4000/&lt;/code&gt;&lt;/strong&gt; 로 연결하여 테마가 적용된 블로그를 확인할 수 있다. 서버를 중지하고 싶으면 Ctrl + c 키를 눌러 &lt;strong&gt;인터럽트 신호&lt;/strong&gt;를 보내면 된다.&lt;/p&gt;
+
+&lt;h2 id=&quot;-git-clone-user-repo&quot;&gt;$ git clone user Repo&lt;/h2&gt;
+&lt;p&gt;  이제 모든 준비가 완료되었다. 처음에 만들었던 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;userName.github.io&lt;/code&gt;&lt;/strong&gt; 저장소를 clone하고 로컬 저장소에 minimal-mistakes를 통채로 복사한 후 커밋하면 정적 github 블로그가 생성된다.&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ~
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git clone 저장소_URL
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cp&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-r&lt;/span&gt; minimal-mistakes/&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; 로컬_저장소_폴더명
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;로컬_저장소_폴더명
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git add &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git commit &lt;span class=&quot;nt&quot;&gt;-m&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;hello my blog&quot;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git push origin master 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;몇 분 정도 지나고 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;https://userName.github.io&lt;/code&gt;&lt;/strong&gt; 에 연결을 하면 블로그가 생성된 것을 확인 할 수 있다.&lt;/p&gt;
+
+&lt;h2 id=&quot;마치며&quot;&gt;마치며&lt;/h2&gt;
+&lt;p&gt;  글로 써보면 많은 내용이 아니지만, 작업 환경을 구성하는 과정이 꽤 복잡했다. 까먹을 수도 있으니까 여기다가 다 적어놔야지..&lt;/p&gt;</content><author><name>Kwanghoo Park</name></author><summary type="html">Jekyll을 활용해서 Github 정적 블로그 생성하기   이전 포스트에서는 우분투 18.04 LTS 환경에 Jekyll을 설치하는 내용을 다루었다. 이제 본격적으로 Jekyll을 활용하여 Github 블로그를 생성해보자. Github Repository 생성하기 Create a New Repository   먼저 우리가 만들 Github 블로그의 테마, 포스트 등을 업로드할 저장소를 생성하자. Repository name은 블로그 생성 후에 도메인으로 사용되므로 userName.github.io의 포맷으로 입력하자.</summary></entry><entry xml:lang="ko"><title type="html">Jekyll 설치하기 Ubuntu 18.04 LTS</title><link href="http://localhost:4000/blog/2020-01-26/01" rel="alternate" type="text/html" title="Jekyll 설치하기 Ubuntu 18.04 LTS" /><published>2020-01-26T00:00:00+09:00</published><updated>2020-01-26T00:00:00+09:00</updated><id>http://localhost:4000/blog/2020-01-26/01</id><content type="html" xml:base="http://localhost:4000/blog/2020-01-26/01">&lt;h1 id=&quot;우분투-1804-lts-환경에-jekyll-설치하기&quot;&gt;우분투 18.04 LTS 환경에 Jekyll 설치하기&lt;/h1&gt;
+&lt;h2 id=&quot;installing-jekyll-on-ubuntu-1804-lts&quot;&gt;Installing Jekyll on Ubuntu 18.04 LTS&lt;/h2&gt;
+
+&lt;p&gt; 오래전부터 깃허브 기술 블로그를 만들어야겠다고 생각해왔고 시도도 많이 했지만, 매번 작업 환경을 구성하는 단계에서 포기했다. 우선, 가장 일반적인 깃허브 기술 블로그 개발 환경은 macOs에서 Jekyll을 이용하는 방법인데, 블로그를 하나 만들기 위해 맥북을 구매하기에는 너무 큰 지출이 발생하므로, &lt;strong&gt;우분투 18.04 LTS&lt;/strong&gt; 환경에서 &lt;strong&gt;Jekyll&lt;/strong&gt;을 설치하여 진행하고자 한다.&lt;/p&gt;
+
+&lt;h2 id=&quot;작업-환경설정&quot;&gt;작업 환경설정&lt;/h2&gt;
+&lt;p&gt; Jekyll은 ruby로 작성된 소프트웨어이므로 이를 설치하기 위해서는 먼저 ruby를 설치해야한다. ruby로 작성된 소프트웨어들은 &lt;strong&gt;적용되는 버젼이 각각 다르기 때문에&lt;/strong&gt; 패키지 관리자를 통해 단일 버젼만을 설치하게되면 추후 &lt;strong&gt;매우 곤란한 상황&lt;/strong&gt;에 빠지게 될 수 있다. 그러므로 우리는 &lt;strong&gt;rbenv&lt;/strong&gt;(루비 버젼 관리 소프트웨어)을 이용해 ruby를 설치할 것이다.&lt;/p&gt;
+
+&lt;h4 id=&quot;apt-get-update-및-필요-라이브러리-설치&quot;&gt;apt-get update 및 필요 라이브러리 설치&lt;/h4&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; $ sudo apt-get update
+ $ sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev software-properties-common libffi-dev nodejs
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;rbenv-설치하기&quot;&gt;rbenv 설치하기&lt;/h4&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;rbenv-환경변수-설정&quot;&gt;rbenv 환경변수 설정&lt;/h4&gt;
+&lt;p&gt; 다음 명령어들을 실행하고 ~/.bashrc 파일을 확인해보면 다음 내용들이 맨 아래에 추가된 것을 확인할 수 있다.&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'export PATH=&quot;$HOME/.rbenv/bin:$PATH&quot;'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; ~/.bashrc
+ &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'eval &quot;$(rbenv init -)&quot;'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; ~/.bashrc
+ &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;exec&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$SHELL&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;ruby-build-설치하기&quot;&gt;ruby-build 설치하기&lt;/h4&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
+ &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'export PATH=&quot;$HOME/.rbenv/plugins/ruby-build/bin:$PATH&quot;'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; ~/.bashrc
+ &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;exec&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$SHELL&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;rbenv-해시-재정렬&quot;&gt;rbenv 해시 재정렬&lt;/h4&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;rbenv rehash
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;rbenv로-ruby-설치하기&quot;&gt;rbenv로 ruby 설치하기&lt;/h4&gt;
+&lt;p&gt; 2.6.3 버젼을 사용하며 큰 문제없이 잘 사용 중이므로 2.6.3 버젼을 선택했지만 버젼 선택은 알아서 하면된다.&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;rbenv &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;2.6.3 
+ &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;rbenv global 2.6.3 
+ &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;rbenv rehash
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;지킬-설치&quot;&gt;지킬 설치&lt;/h4&gt;
+&lt;p&gt; rbenv를 이용해 ruby를 설치하게되면 gem이 함께 설치된다.. apt와 같은 패키지 관리자라고 생각하면 된다. gem 명령어를 이용해 설치한 소프트웨어들은 gem이라고 불리운다.&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;gem &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;jekyll
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h4 id=&quot;bundler-설치&quot;&gt;bundler 설치&lt;/h4&gt;
+&lt;p&gt; 설치된 gem이 또다른 gem을 의존하는 경우, Gemfile이라는 파일에 해당 의존성을 기술하여 bundle install이라는 명령어를 통해 일괄적으로 설치할 수 있다. &lt;strong&gt;bundler는 gem application dependency manager의 역할을 한다&lt;/strong&gt;.&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;gem &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;bundler
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;jekyll-시작&quot;&gt;Jekyll 시작&lt;/h2&gt;
+
+&lt;h4 id=&quot;새-프로젝트-생성&quot;&gt;새 프로젝트 생성&lt;/h4&gt;
+&lt;p&gt; 새 프로젝트를 생성하고 해당 경로로 이동해 jekyll serve하면 로컬 서버에 요청시 기본 블로그 화면을 볼 수 있다. 깃허브 블로그를 생성할 목적이라면 프로젝트명을 githubId.github.io의 형식으로 하는것이 일반적이다.&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;Jekyll new project_name  
+ &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;project_name
+ ~/project_name &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;jekyll serve
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;bundler-활용-example&quot;&gt;bundler 활용 example&lt;/h4&gt;
+&lt;p&gt;프로젝스 폴더로 이동해 Gemfile을 연다.&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; ~/project_name &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;vi Gemfile
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;맨 아래 줄에 다음과 같은 의존성을 기록한다.&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; gem &lt;span class=&quot;s1&quot;&gt;'jekyll-admin'&lt;/span&gt;, group: :jekyll_plugins
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;기록된 의존성에 따른 플러그인을 install하고 jekyll serve한다.&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;bundle &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt;
+ &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ~/project_name
+  ~/project_name &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;jekyll serve 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;http://localhost:4000/admin/로 연결하면 graphical한 admin 페이지를 확인할 수 있다.&lt;/p&gt;</content><author><name>Kwanghoo Park</name></author><summary type="html">우분투 18.04 LTS 환경에 Jekyll 설치하기 Installing Jekyll on Ubuntu 18.04 LTS</summary></entry><entry xml:lang="ko"><title type="html">Hello!</title><link href="http://localhost:4000/blog/2020-01-26/hello" rel="alternate" type="text/html" title="Hello!" /><published>2020-01-26T00:00:00+09:00</published><updated>2020-01-26T00:00:00+09:00</updated><id>http://localhost:4000/blog/2020-01-26/hello</id><content type="html" xml:base="http://localhost:4000/blog/2020-01-26/hello">&lt;p&gt;Hello my blog&lt;/p&gt;
+
+&lt;p&gt;2020-01-26 12:47:03 +0900&lt;/p&gt;</content><author><name>Kwanghoo Park</name></author><summary type="html">Hello my blog</summary></entry></feed>
