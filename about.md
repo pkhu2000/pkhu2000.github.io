@@ -5,5 +5,4 @@ author_profile: true
 permalink: /about/
 ---
 
-about me
-
+{% translate_file about/about.md %}

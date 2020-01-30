@@ -1,0 +1,6 @@
+I"E<h1 id="jekyll을-활용해서-github-정적-블로그-생성하기">Jekyll을 활용해서 Github 정적 블로그 생성하기</h1>
+<p>  이전 포스트에서는 <strong>우분투 18.04 LTS 환경</strong>에 <strong>Jekyll</strong>을 설치하는 내용을 다루었다. 이제 본격적으로 Jekyll을 활용하여 <strong>Github 블로그를 생성</strong>해보자.</p>
+<h2 id="github-repository-생성하기">Github Repository 생성하기</h2>
+<p><a href="http://www.github.com/new">Create a New Repository</a>
+  먼저 우리가 만들 Github 블로그의 테마, 포스트 등을 업로드할 저장소를 생성하자. Repository name은 블로그 생성 후에 <strong>도메인</strong>으로 사용되므로 <strong><code class="highlighter-rouge">userName.github.io</code></strong>의 포맷으로 입력하자.</p>
+:ET

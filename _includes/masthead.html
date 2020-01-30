@@ -40,6 +40,13 @@
           <div class="navicon"></div>
         </button>
         <ul class="hidden-links hidden"></ul>
+		{% if site.lang == "ko" %}
+		  {% capture link1 %}{{ site.baseurl_root }}/en{{ page.url}}{% endcapture %}
+		  <a href="{{ link1 }}" >{% t global.english %}</a>
+		{% elsif site.lang == "en" %}
+		  {% capture link2 %}{{ site.baseurl_root }}{{ page.url  }}{% endcapture %}
+		  <a href="{{ link2 }}" >{% t global.korean%}</a>
+		{% endif %}
       </nav>
     </div>
   </div>
