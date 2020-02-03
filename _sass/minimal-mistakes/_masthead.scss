@@ -15,7 +15,7 @@
     @include clearfix;
     margin-left: auto;
     margin-right: auto;
-    padding: 1em;
+    padding: 0.4em 1em 0.1em 1em;
     max-width: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -40,7 +40,7 @@
 }
 
 .site-logo img {
-  max-height: 2rem;
+  max-height: 2.7rem;
 }
 
 .site-title {
@@ -66,6 +66,8 @@
   clear: both;
 
   .site-nav {
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
     margin-left: 0;
 
     @include breakpoint($small) {
@@ -78,6 +80,32 @@
     padding: 0;
     clear: both;
     list-style-type: none;
+
+  }
+
+  #lang-sel {
+	float: right;
+    margin-left: 0;
+	margin-right: 0.5em;
+
+    @include breakpoint($small) {
+      float: right;
+    }
+
+	.enabled {
+		font-weight: bold;
+	}
+
+  .lang {
+	vertical-align: middle;
+		font-size: 13px;
+
+		a {
+			position: relative;
+			color: #40514e;
+		}
+
+	}
   }
 }
 
