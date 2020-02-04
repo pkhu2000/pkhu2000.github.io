@@ -1,11 +1,11 @@
-current directory: /home/jerry/Documents/pkhu2000.github.io/vendor/bundle/ruby/2.6.0/gems/http_parser.rb-0.6.0/ext/ruby_http_parser
-/home/jerry/.rbenv/versions/2.6.0/bin/ruby -I /home/jerry/.rbenv/versions/2.6.0/lib/ruby/2.6.0 -r ./siteconf20200131-11584-13fdg8f.rb extconf.rb
+current directory: /home/jerry/Documents/minima/vendor/bundle/ruby/2.6.0/gems/http_parser.rb-0.6.0/ext/ruby_http_parser
+/home/jerry/.rbenv/versions/2.6.0/bin/ruby -I /home/jerry/.rbenv/versions/2.6.0/lib/ruby/2.6.0 -r ./siteconf20200204-17061-357ftt.rb extconf.rb
 creating Makefile
 
-current directory: /home/jerry/Documents/pkhu2000.github.io/vendor/bundle/ruby/2.6.0/gems/http_parser.rb-0.6.0/ext/ruby_http_parser
+current directory: /home/jerry/Documents/minima/vendor/bundle/ruby/2.6.0/gems/http_parser.rb-0.6.0/ext/ruby_http_parser
 make "DESTDIR=" clean
 
-current directory: /home/jerry/Documents/pkhu2000.github.io/vendor/bundle/ruby/2.6.0/gems/http_parser.rb-0.6.0/ext/ruby_http_parser
+current directory: /home/jerry/Documents/minima/vendor/bundle/ruby/2.6.0/gems/http_parser.rb-0.6.0/ext/ruby_http_parser
 make "DESTDIR="
 compiling ruby_http_parser.c
 ruby_http_parser.c: In function ‘on_message_begin’:
@@ -47,6 +47,6 @@ cc1: warning: unrecognized command line option ‘-Wno-cast-function-type’
 compiling ryah_http_parser.c
 linking shared-object ruby_http_parser.so
 
-current directory: /home/jerry/Documents/pkhu2000.github.io/vendor/bundle/ruby/2.6.0/gems/http_parser.rb-0.6.0/ext/ruby_http_parser
+current directory: /home/jerry/Documents/minima/vendor/bundle/ruby/2.6.0/gems/http_parser.rb-0.6.0/ext/ruby_http_parser
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 ruby_http_parser.so ./.gem.20200131-11584-16nz15c
+/usr/bin/install -c -m 0755 ruby_http_parser.so ./.gem.20200204-17061-ky9ot9

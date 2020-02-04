@@ -1,11 +1,11 @@
-current directory: /home/jerry/Documents/pkhu2000.github.io/vendor/bundle/ruby/2.6.0/gems/sassc-2.2.1/ext
-/home/jerry/.rbenv/versions/2.6.0/bin/ruby -I /home/jerry/.rbenv/versions/2.6.0/lib/ruby/2.6.0 -r ./siteconf20200131-11584-yjawre.rb extconf.rb
+current directory: /home/jerry/Documents/minima/vendor/bundle/ruby/2.6.0/gems/sassc-2.2.1/ext
+/home/jerry/.rbenv/versions/2.6.0/bin/ruby -I /home/jerry/.rbenv/versions/2.6.0/lib/ruby/2.6.0 -r ./siteconf20200204-17061-16r7mv.rb extconf.rb
 creating Makefile
 
-current directory: /home/jerry/Documents/pkhu2000.github.io/vendor/bundle/ruby/2.6.0/gems/sassc-2.2.1/ext
+current directory: /home/jerry/Documents/minima/vendor/bundle/ruby/2.6.0/gems/sassc-2.2.1/ext
 make "DESTDIR=" clean
 
-current directory: /home/jerry/Documents/pkhu2000.github.io/vendor/bundle/ruby/2.6.0/gems/sassc-2.2.1/ext
+current directory: /home/jerry/Documents/minima/vendor/bundle/ruby/2.6.0/gems/sassc-2.2.1/ext
 make "DESTDIR="
 compiling ./libsass/src/sass_values.cpp
 compiling ./libsass/src/file.cpp
@@ -70,6 +70,6 @@ compiling ./libsass/src/to_value.cpp
 compiling ./libsass/src/ast_sel_unify.cpp
 linking shared-object sassc/libsass.so
 
-current directory: /home/jerry/Documents/pkhu2000.github.io/vendor/bundle/ruby/2.6.0/gems/sassc-2.2.1/ext
+current directory: /home/jerry/Documents/minima/vendor/bundle/ruby/2.6.0/gems/sassc-2.2.1/ext
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 libsass.so ./.gem.20200131-11584-y7j9g6/sassc
+/usr/bin/install -c -m 0755 libsass.so ./.gem.20200204-17061-1q1sha7/sassc

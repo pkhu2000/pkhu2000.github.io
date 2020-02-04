@@ -1,3 +1,13 @@
+## Unreleased
+
+### Enhancements
+
+- Bump Jekyll gem dependency to `v3.7`.
+
+### Bug Fixes
+
+- Fix repeated site base path for masthead logo. [#2385](https://github.com/mmistakes/minimal-mistakes/pull/2385)
+
 ## [4.18.1](https://github.com/mmistakes/minimal-mistakes/releases/tag/4.18.1)
 
 ### Bug Fixes
