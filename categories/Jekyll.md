@@ -1,8 +1,8 @@
 ---
-title: Blog
+layout: custom_category
 author_profile: true
-layout: custom_categories 
-permalink: /categories/
+title: Jekyll 
+permalink: categories/jekyll/
 header:
  image: assets/images/banner.jpg
 ---

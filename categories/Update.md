@@ -1,8 +1,8 @@
 ---
-title: Blog
+layout: custom_category
 author_profile: true
-layout: custom_categories 
-permalink: /categories/
+title: Update 
+permalink: categories/update/
 header:
  image: assets/images/banner.jpg
 ---

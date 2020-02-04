@@ -1,5 +1,8 @@
 ---
+layout: custom_category
+author_profile: true
 title: Linux
-layout: category
 permalink: /categories/linux/
+header:
+ image: assets/images/banner.jpg
 ---
